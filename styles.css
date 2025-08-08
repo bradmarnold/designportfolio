@@ -1,4 +1,4 @@
-/* Base styles for the portfolio site (light theme) */
+/* Base styles for the portfolio site (pastel light theme) */
 * {
   box-sizing: border-box;
 }
@@ -7,14 +7,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #FDF6E3;
+  background-color: #FAF7E9;
   color: #2B2B2B;
   line-height: 1.6;
 }
 
 header {
-  background-color: #F1E8D5;
-  border-bottom: 1px solid #E0D8C0;
+  background-color: #F5EAD9;
+  border-bottom: 1px solid #E9DFC8;
   position: sticky;
   top: 0;
   width: 100%;
@@ -33,7 +33,7 @@ nav {
 nav .logo {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #007ACC;
+  color: #6FA8DC;
   letter-spacing: 1px;
 }
 
@@ -50,7 +50,7 @@ nav .nav-links a {
 }
 
 nav .nav-links a:hover {
-  color: #007ACC;
+  color: #6FA8DC;
 }
 
 main {
@@ -63,16 +63,17 @@ main {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #F5EAD3;
+  background-color: #F7F2DE;
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 3rem;
 }
 
+
 .hero h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: #007ACC;
+  color: #6FA8DC;
 }
 
 .hero p {
@@ -93,7 +94,7 @@ main {
 .hero .buttons a {
   text-decoration: none;
   color: #2B2B2B;
-  background-color: #F7C948;
+  background-color: #FFE5A1;
   padding: 0.75rem 1.5rem;
   border-radius: 0.375rem;
   font-weight: 600;
@@ -101,7 +102,7 @@ main {
 }
 
 .hero .buttons a:hover {
-  background-color: #E6B800;
+  background-color: #FFD97B;
 }
 
 /* Portfolio page */
@@ -138,7 +139,7 @@ main {
 .portfolio-item h3 {
   padding: 1rem;
   margin: 0;
-  color: #007ACC;
+  color: #6FA8DC;
 }
 
 .portfolio-item p {
@@ -152,8 +153,8 @@ main {
 
 .portfolio-item .tags span {
   display: inline-block;
-  background-color: #E6F7FF;
-  color: #007ACC;
+  background-color: #EDF5FB;
+  color: #6FA8DC;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
@@ -174,7 +175,7 @@ main {
 }
 
 .document {
-  border: 1px solid #E0D8C0;
+  border: 1px solid #E9DFC8;
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #FFF;
@@ -183,7 +184,7 @@ main {
 
 .document h3 {
   margin-top: 0;
-  color: #007ACC;
+  color: #6FA8DC;
 }
 
 .document p {
@@ -199,36 +200,36 @@ main {
 
 .tabs button {
   flex: 1;
-  background-color: #E6F7FF;
-  color: #007ACC;
-  border: 1px solid #BFDFF7;
+  background-color: #EDF5FB;
+  color: #6FA8DC;
+  border: 1px solid #CDE0EE;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   cursor: pointer;
 }
 
 .tabs button.active {
-  background-color: #007ACC;
+  background-color: #6FA8DC;
   color: #FFF;
-  border-color: #007ACC;
+  border-color: #6FA8DC;
 }
 
 .tab-content {
   background-color: #FFF;
   padding: 1rem;
-  border: 1px solid #E0D8C0;
+  border: 1px solid #E9DFC8;
   border-radius: 0.5rem;
 }
 
 pre {
-  background-color: #FAF3E0;
+  background-color: #F8F4E6;
   padding: 1rem;
   border-radius: 0.375rem;
   overflow-x: auto;
 }
 
 footer {
-  background-color: #F1E8D5;
+  background-color: #F5EAD9;
   color: #2B2B2B;
   padding: 1rem;
   text-align: center;
