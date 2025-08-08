@@ -1,0 +1,5 @@
+# Denim Sponsorship Proposal
+
+Our goal is to secure a sponsorship for selvedge denim that will lower the barriers to entry for students who want to learn garment design and construction. In the UTA FabLab, I teach students to draft patterns digitally using Valentina and traditional Müller und Sohn techniques. We cut those patterns on a laser cutter to minimize waste and assemble garments with careful attention to heritage details like flat-felled seams and quilted panels. While I love cutting fabric by hand, nesting pieces digitally in Inkscape lets us get the most out of every yard.
+
+By providing high‑quality, American‑made denim to our program, Cone Denim would help students experiment with work shirts, trousers, jackets and jeans without the financial burden of buying their own fabric. In return, I will document the entire process—from drafting and test garments in muslin to dialing in the laser’s power settings for denim and assembling the finished garments—so that others can see how heritage craftsmanship and modern technology can work together to reduce waste and inspire the next generation of makers.
