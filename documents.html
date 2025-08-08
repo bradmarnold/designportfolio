@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents - Bradford Arnold</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="logo">Bradford Arnold</span>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="documents.html">Documents</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+      </div>
+    </nav>
+  </header>
+  <main class="documents-page">
+    <h1>Documents</h1>
+    <div id="docs-container"></div>
+  </main>
+  <script>
+    // List of markdown files to load from the docs folder. Add new filenames here to include more documents.
+    const docs = ["intro.md", "workshop-guide.md", "denim-guide.md", "type3-research.md", "volunteering.md", "upcoming-projects.md"];
+
+    async function loadDocs() {
+      const container = document.getElementById("docs-container");
+      for (const file of docs) {
+        try {
+          const resp = await fetch(`docs/${file}`);
+          const text = await resp.text();
+          const html = marked.parse(text);
+          const article = document.createElement("article");
+          article.classList.add("doc");
+          // Extract title from the first Markdown heading, fallback to the filename
+          const titleMatch = text.match(/^#\s*(.+)/);
+          const title = titleMatch ? titleMatch[1].trim() : file.replace(/\.md$/, "");
+          article.innerHTML = `<h2>${title}</h2>` + html;
+          container.appendChild(article);
+        } catch (err) {
+          console.error("Error loading document", file, err);
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadDocs);
+  </script>
+</body>
+</html>
