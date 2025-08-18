@@ -1,8 +1,19 @@
 import Image from "next/image";
-import { getProjectBySlug } from "../_data";
+import { getProjectBySlug, projects } from "../_data";
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default async function ProjectDetail({ params }: PageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) {
     return <main className="container mx-auto p-6">Not found</main>;
   }

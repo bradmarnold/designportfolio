@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         'brand-yellow': {
-          DEFAULT: '#F7D23E',
-          50: '#FFF8D6',
+          DEFAULT: '#FFC233',
+          50: '#FFF3C2',
           100: '#FFF3B8',
           200: '#FFEB7D',
           300: '#FFE342',
-          400: '#F7D23E',
-          500: '#F7D23E',
-          600: '#E6C21D',
+          400: '#FFC233',
+          500: '#FFC233',
+          600: '#E3A900',
           700: '#C7A519',
           800: '#A88615',
           900: '#896B11',
