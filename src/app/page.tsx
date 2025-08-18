@@ -10,16 +10,15 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative border-b border-zinc-200/60 dark:border-zinc-800/80">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(255,194,51,.25),transparent_60%)]" />
+      <section className="relative border-b border-zinc-200/60 dark:border-zinc-800/80 hero-bg">
         <div className="container py-16">
           <p className="text-sm tracking-wide uppercase text-zinc-500">Portfolio</p>
           <h1 className="mt-2 text-4xl md:text-5xl font-semibold leading-tight">
             Design, fabrication, and teaching
           </h1>
           <p className="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Pattern design in classic American garments, sustainable laser workflows, a Seamly2D web tool,
-            an aquaponics sensor coach, and a cloud chamber with a wood base for better insulation.
+            Classic American pattern work (501s, Type 3), sustainable laser workflows, a Seamly2D web helper,
+            an aquaponics sensor coach, and a wood-base cloud chamber for better insulation.
           </p>
           <div className="mt-6 flex gap-3">
             <Link href="/projects/" className="rounded-xl bg-brand-yellow px-4 py-2 font-medium text-black hover:bg-brand-yellow-600">
@@ -70,9 +69,9 @@ export default function Home() {
 
       {/* Teaching CTA */}
       <section className="container py-12">
-        <SectionHeader title="Teaching and unit tests" subtitle="A simple practice flow with per unit analytics" />
+        <SectionHeader title="Teaching and practice" subtitle="A simple practice flow with per unit analytics" />
         <div className="rounded-2xl border p-6">
-          <p className="text-zinc-600 dark:text-zinc-400">Try the demo test runner that works like familiar practice flows with arrow navigation.</p>
+          <p className="text-zinc-600 dark:text-zinc-400">Try the demo test runner with arrow navigation and saved progress.</p>
           <Link href="/teaching/" className="mt-4 inline-block rounded-xl bg-brand-yellow px-4 py-2 font-medium text-black hover:bg-brand-yellow-600">Open test demo</Link>
         </div>
       </section>

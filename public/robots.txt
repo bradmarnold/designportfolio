@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemaps
-Sitemap: https://bradfordarnold.com/sitemap.xml
+Sitemap: https://bradmarnold.github.io/designportfolio/sitemap.xml
