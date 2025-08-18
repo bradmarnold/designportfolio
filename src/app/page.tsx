@@ -36,4 +36,37 @@ export default function Home() {
       </section>
 
       {/* Featured projects */}
-      <section classN
+      <section className="py-16">
+        <h2 className="text-3xl font-semibold mb-8">Featured Projects</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featured.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}/`}
+              className="block border rounded-xl p-4 hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow-600"
+            >
+              <div className="w-full h-44 relative mb-3 overflow-hidden rounded-md">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} cover`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-medium mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-600 mb-3">{project.summary}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="text-xs bg-brand-yellow-50 px-2 py-1 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
