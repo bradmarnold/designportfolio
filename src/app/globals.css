@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Background grid styles */
+.bg-grid-slate-100\/50 {
+  background-image: url("data:image/svg+xml,%3csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23e2e8f0' fill-opacity='0.5' fill-rule='evenodd'%3e%3cpath d='m0 40 0-40 40 0v40z' stroke='%23e2e8f0' stroke-width='1'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+.dark .bg-grid-slate-700\/25 {
+  background-image: url("data:image/svg+xml,%3csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%2334d399' fill-opacity='0.25' fill-rule='evenodd'%3e%3cpath d='m0 40 0-40 40 0v40z' stroke='%2334d399' stroke-width='1'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+/* Print styles for resume page */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .resume-container {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
