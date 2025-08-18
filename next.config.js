@@ -1,18 +1,14 @@
-const withMDX = require('@next/mdx')()
-
+// next.config.js
 /** @type {import('next').NextConfig} */
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'designportfolio';
+
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  experimental: {
-    mdxRs: true,
-  },
   output: 'export',
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
-  distDir: 'dist',
-  images: {
-    unoptimized: true,
-  },
-}
+  images: { unoptimized: true },
+  assetPrefix: isGitHubPages ? `/${repo}/` : undefined,
+  basePath: isGitHubPages ? `/${repo}` : undefined,
+};
 
-module.exports = withMDX(nextConfig)
+module.exports = nextConfig;
