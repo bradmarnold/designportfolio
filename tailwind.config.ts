@@ -1,88 +1,31 @@
-import type { Config } from 'tailwindcss'
+// tailwind.config.ts
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        'brand-yellow': {
-          DEFAULT: '#FFC233',
-          50: '#FFF3C2',
-          100: '#FFF3B8',
-          200: '#FFEB7D',
-          300: '#FFE342',
-          400: '#FFC233',
-          500: '#FFC233',
-          600: '#E3A900',
-          700: '#C7A519',
-          800: '#A88615',
-          900: '#896B11',
-        },
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
+        "brand-yellow": {
+          DEFAULT: "#FFC233",
+          50: "#FFF3C2",
+          600: "#E3A900",
         },
       },
-      fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'serif': ['Source Serif Pro', 'serif'],
+      boxShadow: {
+        soft: "0 6px 24px rgba(0,0,0,0.08)",
       },
-      animation: {
-        'fade-in': 'fadeIn 0.3s ease-in-out',
-        'slide-up': 'slideUp 0.3s ease-out',
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.25rem",
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+      container: {
+        center: true,
+        padding: "1rem",
+        screens: { "2xl": "1120px" },
       },
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [require("@tailwindcss/typography")],
+};
+export default config;

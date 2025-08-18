@@ -10,7 +10,7 @@ export function SustainabilityCallout() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeader
           title="Sustainability through Lasers"
-          description="Reducing waste in natural fiber garment workflows through precision cutting and smart pattern nesting."
+          subtitle="Reducing waste in natural fiber garment workflows through precision cutting and smart pattern nesting."
         />
         
         <motion.div

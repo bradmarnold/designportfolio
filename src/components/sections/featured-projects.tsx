@@ -58,7 +58,7 @@ export function FeaturedProjects() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeader
           title="Featured Projects"
-          description="A selection of recent work spanning pattern design, fabrication, teaching tools, and research projects."
+          subtitle="A selection of recent work spanning pattern design, fabrication, teaching tools, and research projects."
         />
         
         <motion.div

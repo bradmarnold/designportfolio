@@ -70,7 +70,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeader
           title="Get in Touch"
-          description="Interested in tutoring, collaboration, or have questions about my work? I'd love to hear from you."
+          subtitle="Interested in tutoring, collaboration, or have questions about my work? I'd love to hear from you."
         />
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12">

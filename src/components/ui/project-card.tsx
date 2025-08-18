@@ -37,7 +37,7 @@ export function ProjectCard({
         <div className="p-6">
           <div className="flex flex-wrap gap-2 mb-3">
             {tags.map((tag) => (
-              <Tag key={tag} variant="yellow">
+              <Tag key={tag}>
                 {tag}
               </Tag>
             ))}
