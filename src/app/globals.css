@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 :root { color-scheme: light dark; }
+:focus-visible { outline: 2px solid #E3A900; outline-offset: 2px; }
 
-* { outline-offset: 2px; }
-:focus-visible { outline: 2px solid #E3A900; }
-
-.prose a { text-decoration: underline; text-underline-offset: 4px; }
+/* subtle hero glow background helper */
+.hero-bg::before{
+  content:"";
+  position:absolute; inset: -20% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(1200px 300px at 20% 10%, rgba(255,194,51,.25), transparent 60%);
+  pointer-events:none; z-index:-1;
+}

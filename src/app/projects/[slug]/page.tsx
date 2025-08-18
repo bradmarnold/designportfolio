@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { projects, getProjectBySlug } from "../_data";
+import Lightbox from "@/components/ui/lightbox";
 import { Tag } from "@/components/ui/tag";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
@@ -29,15 +30,7 @@ export default async function ProjectDetail({ params }: PageProps) {
           {p.content.split("\n").map((line, i) => <p key={i}>{line}</p>)}
         </article>
 
-        {p.gallery?.length ? (
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {p.gallery.map((src, i) => (
-              <div key={i} className="relative h-56 w-full overflow-hidden rounded-xl border">
-                <Image src={src} alt={`${p.title} image ${i + 1}`} fill className="object-cover" />
-              </div>
-            ))}
-          </div>
-        ) : null}
+        {p.gallery?.length ? <div className="mt-8"><Lightbox images={p.gallery} /></div> : null}
       </div>
     </main>
   );
