@@ -8,7 +8,7 @@ export default function ResumePage() {
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <SectionHeader
           title="Resume"
-          description="Experience in design, fabrication, teaching, and sustainable manufacturing practices."
+          subtitle="Experience in design, fabrication, teaching, and sustainable manufacturing practices."
         />
 
         <div className="mt-16 mb-8 text-center">

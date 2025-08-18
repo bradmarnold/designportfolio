@@ -12,7 +12,7 @@ export function TeachingAndTools() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeader
           title="Teaching and Tools"
-          description="Creating educational resources and interactive learning experiences for students."
+          subtitle="Creating educational resources and interactive learning experiences for students."
         />
         
         <motion.div

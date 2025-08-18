@@ -1,72 +1,81 @@
-// src/app/page.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "./projects/_data";
+import { Card } from "@/components/ui/card";
+import { Tag } from "@/components/ui/tag";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export default function Home() {
   const featured = projects.slice(0, 6);
-
   return (
-    <main className="container mx-auto px-4 py-12">
+    <div>
       {/* Hero */}
-      <section className="py-10">
-        <p className="text-sm tracking-wide uppercase text-gray-500">designportfolio</p>
-        <h1 className="text-4xl md:text-5xl font-semibold mt-2">
-          Bradford Arnold Portfolio
-        </h1>
-        <p className="mt-4 max-w-2xl text-gray-600">
-          Pattern design, fabrication, and teaching. Sustainable laser workflows,
-          a Seamly2D web tool for students, an aquaponics sensor suite with an AI coach,
-          and a cloud chamber with a wood base for better insulation.
-        </p>
-        <div className="mt-6 flex gap-3">
-          <Link
-            href="/projects/"
-            className="inline-block rounded-xl bg-brand-yellow px-4 py-2 font-medium hover:bg-brand-yellow-600 focus:outline-none focus:ring-2 focus:ring-brand-yellow-600"
-          >
-            View projects
-          </Link>
-          <a
-            href="mailto:bradfordm.arnold@gmail.com"
-            className="inline-block rounded-xl border px-4 py-2 font-medium hover:bg-brand-yellow-50 focus:outline-none focus:ring-2 focus:ring-brand-yellow-600"
-          >
-            Hire for tutoring
-          </a>
+      <section className="relative border-b border-zinc-200/60 dark:border-zinc-800/80">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(255,194,51,.25),transparent_60%)]" />
+        <div className="container py-16">
+          <p className="text-sm tracking-wide uppercase text-zinc-500">Portfolio</p>
+          <h1 className="mt-2 text-4xl md:text-5xl font-semibold leading-tight">
+            Design, fabrication, and teaching
+          </h1>
+          <p className="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
+            Pattern design in classic American garments, sustainable laser workflows, a Seamly2D web tool,
+            an aquaponics sensor coach, and a cloud chamber with a wood base for better insulation.
+          </p>
+          <div className="mt-6 flex gap-3">
+            <Link href="/projects/" className="rounded-xl bg-brand-yellow px-4 py-2 font-medium text-black hover:bg-brand-yellow-600">
+              View projects
+            </Link>
+            <a href="mailto:bradfordm.arnold@gmail.com" className="rounded-xl border px-4 py-2 font-medium hover:bg-brand-yellow-50">
+              Hire for tutoring
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Featured projects */}
-      <section className="py-16">
-        <h2 className="text-3xl font-semibold mb-8">Featured Projects</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project) => (
-            <Link
-              key={project.slug}
-              href={`/projects/${project.slug}/`}
-              className="block border rounded-xl p-4 hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow-600"
-            >
-              <div className="w-full h-44 relative mb-3 overflow-hidden rounded-md">
-                <Image
-                  src={project.image}
-                  alt={`${project.title} cover`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-medium mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-600 mb-3">{project.summary}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-brand-yellow-50 px-2 py-1 rounded">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+      <section className="container py-12">
+        <SectionHeader title="Featured projects" subtitle="A few current favorites" />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((p) => (
+            <Link key={p.slug} href={`/projects/${p.slug}/`} className="focus:outline-none">
+              <Card className="overflow-hidden transition-transform hover:-translate-y-0.5">
+                <div className="relative h-44 w-full">
+                  <Image src={p.image} alt={`${p.title} cover`} fill className="object-cover" />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-medium">{p.title}</h3>
+                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{p.summary}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {p.tags.map((t) => <Tag key={t}>{t}</Tag>)}
+                  </div>
+                </div>
+              </Card>
             </Link>
           ))}
         </div>
+        <div className="mt-6">
+          <Link href="/projects/" className="underline underline-offset-4">See all projects</Link>
+        </div>
       </section>
-    </main>
+
+      {/* Sustainability callout */}
+      <section className="bg-brand-yellow-50 border-y border-zinc-200/60 dark:border-zinc-800/80">
+        <div className="container py-10">
+          <SectionHeader title="Sustainability through lasers" />
+          <p className="max-w-3xl text-zinc-700 dark:text-zinc-300">
+            Laser cutting reduces waste with tight nesting on natural fibers. Offcuts are predictable and useful in class kits.
+          </p>
+        </div>
+      </section>
+
+      {/* Teaching CTA */}
+      <section className="container py-12">
+        <SectionHeader title="Teaching and unit tests" subtitle="A simple practice flow with per unit analytics" />
+        <div className="rounded-2xl border p-6">
+          <p className="text-zinc-600 dark:text-zinc-400">Try the demo test runner that works like familiar practice flows with arrow navigation.</p>
+          <Link href="/teaching/" className="mt-4 inline-block rounded-xl bg-brand-yellow px-4 py-2 font-medium text-black hover:bg-brand-yellow-600">Open test demo</Link>
+        </div>
+      </section>
+    </div>
   );
 }
